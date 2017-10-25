@@ -2,13 +2,13 @@ from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
 
-neuralNetwork = buildNetwork(2, 1, 1, bias=True)
+neuralNetwork = buildNetwork(2, 1, 1, bias=False)
 
 dataset = SupervisedDataSet(2,1)
 
 dataset.addSample((0,0),(0))
-dataset.addSample((1,0),(1))
-dataset.addSample((0,1),(1))
+dataset.addSample((1,0),(0))
+dataset.addSample((0,1),(0))
 dataset.addSample((1,1),(1))
 
 trainer = BackpropTrainer(neuralNetwork, dataset=dataset, learningrate=0.01, momentum=0.06)

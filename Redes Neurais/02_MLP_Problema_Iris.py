@@ -52,9 +52,11 @@ dataSet = ClassificationDataSet(4, 1, nb_classes=3)
 #print(np.ravel(dataFeatures[10]))
 #print(dataTargets[10])
 
+
 # Adicionando cada exemplo no DataSet
 for i in range(len(dataFeatures)):
     dataSet.addSample(np.ravel(dataFeatures[i]), dataTargets[i])
+
 
 # 70% do DataSet será utilizado para testes
 # 30% do DataSet será utilizado para testar os valores
@@ -62,10 +64,11 @@ trainingData, testData = splitWithProportion(dataSet, 0.7)
 
 #print(trainingData)
 trainingData._convertToOneOfMany()
-#print(trainingData)
+print(trainingData)
 
 testData._convertToOneOfMany()
 
+'''
 # Construindo Rede Neural
 #print(trainingData.indim)
 #print(trainingData.outdim)
@@ -89,3 +92,4 @@ for input in dataFeatures:
     print("Registro ", registro, " - Saída: ", neuralNetwork.activate(input))
     registro = registro + 1
 
+'''
